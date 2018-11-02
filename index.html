@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section style="height: 100%;" data-background-opacity="0.25" data-background-size="cover" data-background="https://spectrum.ieee.org/image/MzEwMTk5OA.jpeg" >
+          <img style="margin: 0; float: left; height: 200px; width:200px;" src="https://www.drupal.org/files/styles/grid-3/public/index_2.png?itok=gnATphfn" />
+          <img style="margin: 12px; float: right; height: 150px; width:150px; border: none;" src="assets/img/rundeck.jpg" />
+          <img style="margin: 12px; float: right; height: 150px; width:150px; border: none; background-color: transparent;" src="assets/img/saltstack.png" />
+          <img style="margin: 12px; float: right; height: 150px; width:150px; border: none; background-color: transparent;" src="https://seeklogo.com/images/V/vagrant-logo-B214F47636-seeklogo.com.png" />
+          <div style="width:100%; margin-top: 275px" >
+            <h2 style="color: tomato;">Infrastructure Redesign</h2>
+            <span style="display: block; color: pink">PART 1</span>
+            <span style="display: block; color: pink">Provisionning & Orchestration</span>
+          </div>
+        </section>
+        <section>
+          <h1>A brief History..</h1>
+            <p>We used to edit website on a single server</p>
+            <p>Webistes used to be static html files with static datas</p>
+            <p>And then, we started to share code between devs with USB keys</p>
+            <p>Now every Apps on the web are incredibly dynamic and infrastructures needed are even more complicated</p>
+        </section>
+        <section>
+          <h1>What we need..</h1>
+            <h3>High Avaibility</h3>
+            <h3>High Velocity</h3>
+            <h3>Security Survey: Infra, Communication & Software Fixes</h3>
+            <h3>Frequent deployment that match business needs</h3>
+        </section>
+        <section>
+          <h2>Typical skeleton of nowadays apps</h2>
+          <p>At least 2 databases server for data redundency</p>
+          <p>At least 2 binary app server for HA</p>
+          <p>At least 2 reverse proxy for Load Balancing</p>
+          <p>At least 2 repl. LDAP servers to store customer infos</p>
+          <p>All of these in at least 2 geograhical location</p>
+          <p>Secure connections to needed services and apps</p>
+          <h3>Goal is to be up to date, secure, and up 99,9% of time</h3>
+        </section>
+        <section>
+          <h1>DevOps philosophy</h1>
+          <h3>IAS > Infrastrucure as Code</h3>
+          <p>Versionning and Readability</p>
+          <p>Reproductible environments</p>
+          <p>No manual action on servers</p>
+          <h3>Technology monitoring</h3>
+          <h3>Listen carefully to app dev needs</h3>
+        </section>
+        <section>
+          <h1>DevOps Tools</h1>
+          <h3>Provisionners : Conf & Packages Management</h3>
+          <ul>
+            <li>Puppet</li>
+            <li>Salt</li>
+            <li>Chef ( and even more )</li>
+          </ul>
+          <h3>App dependency managers</h3>
+          <ul>
+            <li>npm | yarn -> Javascript</li>
+            <li>maven -> Java</li>
+            <li>composer -> PHP</li>
+          </ul>
+        </section>
+        <section>
+          <h1>DevOps Tools</h1>
+          <h3>Job Schedulers</h3>
+          <ul>
+            <li>Crontabs</li>
+            <li>Rundeck : Centralized and capable of delegating</li>
+          </ul>
+          <h3>Orchestrators</h3>
+          <ul>
+            <li>Salstack</li>
+            <li>Ansible</li>
+            <li>Rundeck</li>
+            <li>Apache Brooklyn</li>
+          </ul>
+        </section>
+        <section>
+            <h2>Advanced Orchestrator Features</h2>
+            <ul>
+              <li>Job with Complex Workflow definition</li>
+              <li>Dispatched to several nodes</li>
+              <li>Parrallel / Sequential / Hybrid</li>
+            </ul>
+          </section>
+          <section>
+            <section>
+              <img src="assets/img/jobgraph/img1.png" />
+            </section>
+            <section>
+              <img src="assets/img/jobgraph/img2.png" />
+            </section>
+            <section>
+              <img src="assets/img/jobgraph/img3.png" />
+            </section>
+            <section>
+              <img src="assets/img/jobgraph/img4.png" />
+            </section>
+            <section>
+              <img src="assets/img/jobgraph/img5.png" />
+            </section>
+            <section>
+              <img src="assets/img/jobgraph/img6.png" />
+            </section>
+          </section>
+        <section>
+          <h1>DevOps Tools</h1>
+          <h3>Monitoring & Metrics</h3>
+          <ul>
+            <li>Nagios</li>
+            <li>Icinga | Grafana</li>
+            <li>Zabbix</li>
+            <li>Netdata + InfluxDB + Grafana</li>
+          </ul>
+          <h3>Centralized Log Management</h3>
+          <ul>
+            <li>ELK -> Elastic | Logstash | Kibana</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Roadmap</h1>
+          <h3>clear the existing debt</h3>
+          <ul>
+            <li>Indoor Platform</li>
+            <li>Managed Web Projects</li>
+          </ul>
+          <h3>Ameliorate Infrastructure</h3>
+          <ul>
+            <li>Orchestration</li>
+            <li>Monitoring</li>
+            <li>Logs Centralization</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Ameliorate Infrastructure</h3>
+          <ul>
+            <li>New Automating tools Integration</li>
+            <li>Containerization (Docker/Jail)</li>
+          </ul>
+          <h3>Propagate to other Environments</h3>
+          <ul>
+            <li>Existing ones</li>
+            <li>Cloud IAAS (AWS|GCP)</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
